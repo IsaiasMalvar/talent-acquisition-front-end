@@ -8,7 +8,11 @@ export default {
         "./src/components/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
-        extend: {},
+        extend: {
+            screens: {
+                mobile: "320px",
+            },
+        },
     },
     plugins: [],
 } satisfies Config
