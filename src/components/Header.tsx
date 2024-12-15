@@ -18,6 +18,9 @@ const Header = ({ className }: HeaderProps): React.ReactElement => {
                 <Link to="/">Home</Link>
             </div>
             <div className="border-link">
+                <Link to="/create-new-request">New Request</Link>
+            </div>
+            <div className="border-link">
                 <Link to="/hiring-manager">Hiring Manager's Portal</Link>
             </div>
             <div className="border-link">
