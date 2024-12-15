@@ -1,11 +1,8 @@
 import "./assets/index.css"
+import Layout from "./components/Layout"
 
 function App() {
-    return (
-        <div className="bg-black text-white flex flex-col ">
-            <span>Talent Acquisition System</span>
-        </div>
-    )
+    return <Layout>{<div></div>}</Layout>
 }
 
 export default App
