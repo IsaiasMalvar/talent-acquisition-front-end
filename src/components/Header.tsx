@@ -1,9 +1,9 @@
-import React from "react"
-import { Link } from "react-router"
-import { cn } from "../utils/utils"
+import React from "react";
+import { Link } from "react-router";
+import { cn } from "../utils/utils";
 
 interface HeaderProps {
-    className?: string
+    className?: string;
 }
 
 const Header = ({ className }: HeaderProps): React.ReactElement => {
@@ -11,7 +11,7 @@ const Header = ({ className }: HeaderProps): React.ReactElement => {
         <header
             className={cn(
                 "flex md:flex-row justify-around relative p-4 mobile:flex-col md:text-base font-mono text-slate-100 font-bold",
-                className,
+                className
             )}
         >
             <Link className="border-link" to="/">
@@ -26,7 +26,7 @@ const Header = ({ className }: HeaderProps): React.ReactElement => {
                 Careers Portal
             </Link>
         </header>
-    )
-}
+    );
+};
 
-export default Header
+export default Header;
