@@ -2,7 +2,7 @@ import "./assets/index.css"
 import Layout from "./components/Layout"
 
 function App() {
-    return <Layout>{<div></div>}</Layout>
+    return <Layout />
 }
 
 export default App

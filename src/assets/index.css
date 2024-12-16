@@ -4,16 +4,27 @@
 
 @layer components {
     .border-link {
-        @apply border-r-2 p-2 relative after:absolute after:bottom-0 after:left-0 after:border-b-2 after:w-full hover:bg-blue-500/70 duration-700;
+        @apply border-r-2 p-2 pointer-events-auto   relative after:absolute after:bottom-0 after:left-0 after:border-b-2 after:w-full hover:bg-orange-950/50 duration-700;
     }
 }
 @layer utilities {
     .bg-custom {
-        background: rgb(105, 191, 245);
+        background: rgb(245, 165, 105);
         background: linear-gradient(
             90deg,
-            rgba(105, 191, 245, 1) 0%,
-            rgba(4, 130, 195, 1) 100%
+            rgba(245, 165, 105, 1) 0%,
+            rgba(195, 99, 4, 1) 100%
         );
+    }
+
+    .tinted-image {
+        width: 100%;
+        height: -webkit-fill-available;
+        min-height: 100%;
+        background-image: url("/talent-re.webp");
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 3000px rgba(105, 191, 245, 0.1) inset;
+        background-repeat: no-repeat;
     }
 }

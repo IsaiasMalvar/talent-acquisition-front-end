@@ -12,6 +12,12 @@ export default {
             screens: {
                 mobile: "320px",
             },
+            fontFamily: {
+                poppins: ["Poppins", "sans-serif"],
+            },
+            flexGrow: {
+                2: "2",
+            },
         },
     },
     plugins: [],
