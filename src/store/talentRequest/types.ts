@@ -5,6 +5,13 @@ export interface TalentRequest {
     startDate: string;
 }
 
+export interface TalentRequestFulfillment {
+    talentRequestTitle: string;
+    requestStatus: string;
+    startDate: Date;
+    talentRequestId: string;
+}
+
 export interface CandidateSkills {
     coreSkill: string;
     skillLevel: string;
@@ -13,4 +20,13 @@ export interface CandidateSkills {
 export interface JobDescription {
     responsibilities: string;
     qualifications: string;
+}
+
+export interface TalentRequestSliceState {
+    talentRequests: TalentRequestFulfillment[];
+    talentRequest: TalentRequest;
+    isError: boolean;
+    isSuccess: boolean;
+    isLoading: boolean;
+    message: string;
 }

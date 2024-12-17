@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { TalentRequest } from "../store/talentRequest/types";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
-import { createTalentRequest } from "../store/talentRequest/talentRequestSlice";
+import {
+    createTalentRequest,
+    reset,
+} from "../store/talentRequest/talentRequestSlice";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router";
 
 const CreateNewRequestForm = (): React.ReactElement => {
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
 
-    const { isLoading, isError, isSuccess } = useAppSelector(
+    const { message, isError, isSuccess } = useAppSelector(
         (state) => state.talentRequest
     );
 
@@ -55,8 +61,20 @@ const CreateNewRequestForm = (): React.ReactElement => {
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         dispatch(createTalentRequest(talentRequest));
-        console.log(talentRequest);
     };
+
+    useEffect(() => {
+        if (isError) {
+            toast.error(message);
+        }
+
+        if (isSuccess) {
+            dispatch(reset());
+            navigate("/get-all-talent-requests");
+        }
+
+        dispatch(reset());
+    });
 
     return (
         <div className="p-5 bg-amber-950/10 mb-10">

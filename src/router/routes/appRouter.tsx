@@ -2,6 +2,7 @@ import { createBrowserRouter, Navigate, RouteObject } from "react-router";
 import App from "../../App";
 import HomePage from "../../pages/HomePage";
 import CreateRequestPage from "../../pages/CreateRequestPage";
+import ViewAllRequests from "../../pages/ViewAllRequests";
 
 const routes: RouteObject[] = [
     {
@@ -19,6 +20,10 @@ const routes: RouteObject[] = [
             {
                 path: "/create-new-request",
                 element: <CreateRequestPage />,
+            },
+            {
+                path: "/view-all-requests",
+                element: <ViewAllRequests />,
             },
         ],
     },
