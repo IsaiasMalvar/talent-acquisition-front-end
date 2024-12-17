@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 export default {
     content: [
@@ -14,6 +14,7 @@ export default {
             },
             fontFamily: {
                 poppins: ["Poppins", "sans-serif"],
+                oswald: ["Oswald", "sans-serif"],
             },
             flexGrow: {
                 2: "2",
@@ -21,4 +22,4 @@ export default {
         },
     },
     plugins: [],
-} satisfies Config
+} satisfies Config;

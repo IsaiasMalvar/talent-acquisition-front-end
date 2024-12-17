@@ -10,7 +10,7 @@ const Header = ({ className }: HeaderProps): React.ReactElement => {
     return (
         <header
             className={cn(
-                "flex md:flex-row justify-around relative p-4 mobile:flex-col md:text-base font-mono text-slate-100 font-bold",
+                "flex md:flex-row justify-around relative p-2 mobile:flex-col md:text-base font-mono text-slate-100 font-bold",
                 className
             )}
         >
@@ -18,7 +18,7 @@ const Header = ({ className }: HeaderProps): React.ReactElement => {
                 Home
             </Link>
 
-            <Link to="/" className="border-link">
+            <Link to="/talent-fulfillment-portal" className="border-link">
                 Talent Fulfillment Portal
             </Link>
 
