@@ -2,7 +2,8 @@ import { createBrowserRouter, Navigate, RouteObject } from "react-router";
 import App from "../../App";
 import HomePage from "../../pages/HomePage";
 import CreateRequestPage from "../../pages/CreateRequestPage";
-import ViewAllRequests from "../../pages/ViewAllRequests";
+import ViewAllRequestsPage from "../../pages/ViewAllRequestsPage";
+import RequestDetailPage from "../../pages/RequestDetailPage";
 
 const routes: RouteObject[] = [
     {
@@ -23,7 +24,11 @@ const routes: RouteObject[] = [
             },
             {
                 path: "/view-all-requests",
-                element: <ViewAllRequests />,
+                element: <ViewAllRequestsPage />,
+            },
+            {
+                path: "/talent-request/:talentRequestId",
+                element: <RequestDetailPage />,
             },
         ],
     },

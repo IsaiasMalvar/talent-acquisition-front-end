@@ -6,7 +6,7 @@ import {
 } from "../store/talentRequest/talentRequestSlice";
 import TalentRequestItem from "../components/TalentRequestItem";
 
-const ViewAllRequests = (): React.ReactElement => {
+const ViewAllRequestsPage = (): React.ReactElement => {
     const { isSuccess, talentRequests } = useAppSelector(
         (state) => state.talentRequest
     );
@@ -52,4 +52,4 @@ const ViewAllRequests = (): React.ReactElement => {
     );
 };
 
-export default ViewAllRequests;
+export default ViewAllRequestsPage;
