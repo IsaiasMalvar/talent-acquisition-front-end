@@ -7,7 +7,7 @@ const HomePage = (): React.ReactElement => {
             {" "}
             <section className="flex relative  w-full h-[630px] overflow-y-hidden">
                 <HeroContent color="text-amber-900" />
-                <div className="mobile:hidden md:block border-l border-t border-white tinted-image text-amber-900"></div>
+                <div className="mobile:hidden md:block border-l-8 border-t-8 border-amber-900/50 tinted-image text-amber-900"></div>
                 <div className="md:hidden absolute left-1/2 -translate-x-1/2 bottom-0 sm:-bottom-20">
                     <img src="/tm-illustration.png" className="" />
                 </div>

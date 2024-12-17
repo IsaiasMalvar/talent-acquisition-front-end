@@ -4,7 +4,7 @@
 
 @layer components {
     .border-link {
-        @apply border-r-2 p-2 pointer-events-auto   relative after:absolute after:bottom-0 after:left-0 after:border-b-2 after:w-full hover:bg-orange-950/50 duration-700;
+        @apply border-r-2 p-2 border-amber-800 after:border-amber-800 pointer-events-auto   relative after:absolute after:bottom-0 after:left-0 after:border-b-2 after:w-full hover:bg-orange-950/50 duration-700;
     }
 
     .form-group {
