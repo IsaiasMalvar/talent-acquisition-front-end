@@ -7,8 +7,9 @@ export interface TalentRequest {
 
 export interface TalentRequestFulfillment {
     talentRequestTitle: string;
-    status: string;
-    startDate: string;
+    requestStatus: string;
+    startDate: Date;
+    talentRequestId: string;
 }
 
 export interface CandidateSkills {
@@ -19,4 +20,13 @@ export interface CandidateSkills {
 export interface JobDescription {
     responsibilities: string;
     qualifications: string;
+}
+
+export interface TalentRequestSliceState {
+    talentRequests: TalentRequestFulfillment[];
+    talentRequest: TalentRequest;
+    isError: boolean;
+    isSuccess: boolean;
+    isLoading: boolean;
+    message: string;
 }

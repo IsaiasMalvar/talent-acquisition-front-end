@@ -16,7 +16,7 @@
     }
 
     .grid-title {
-        @apply font-bold uppercase font-mono col-start-1 text-white p-2 text-center;
+        @apply font-bold uppercase font-mono col-start-1 text-white p-2 text-center text-2xl;
     }
 }
 @layer utilities {

@@ -4,11 +4,12 @@ import {
     getAllTalentRequests,
     reset,
 } from "../store/talentRequest/talentRequestSlice";
+import TalentRequestItem from "../components/TalentRequestItem";
 
 const ViewAllRequests = (): React.ReactElement => {
-    // isLoading,talentRequests,
-
-    const { isSuccess } = useAppSelector((state) => state.talentRequest);
+    const { isSuccess, talentRequests } = useAppSelector(
+        (state) => state.talentRequest
+    );
 
     const dispatch = useAppDispatch();
 
@@ -25,32 +26,27 @@ const ViewAllRequests = (): React.ReactElement => {
     }, [dispatch, isSuccess]);
 
     return (
-        <section className="m-auto">
-            <div className="grid  grid-cols-4 gap-3 p-5 mt-5 ">
-                <div className="grid-title col-start-1 ">
+        <section className="m-auto h-full flex flex-col items-center">
+            <h1 className="text-5xl text-white font-oswald ">
+                Available Requests
+            </h1>
+            <div className="grid  grid-cols-4 gap-3 p-5 mt-10 h-[70%] items-center border-4 rounded border-amber-900/70">
+                <div className="grid-title col-start-1">
                     Talent Request Title
                 </div>
-                <div className="grid-title col-start-2 ">Start Date</div>
-                <div className="grid-title col-start-3 ">Status</div>
-                <div className="grid-title col-start-4 ">Actions</div>
-                {Array(4)
-                    .fill("")
-                    .map(() => (
-                        <>
-                            <div className="col-start-1  p-2 text-center">
-                                Side Content
-                            </div>
-                            <div className="col-start-2   p-2 text-center">
-                                Side Content
-                            </div>
-                            <div className="col-start-3   p-2 text-center">
-                                Side Content
-                            </div>
-                            <div className="col-start-4  p-2 text-center">
-                                Side Content
-                            </div>
-                        </>
-                    ))}
+                <div className="grid-title col-start-2 text-center">
+                    Start Date
+                </div>
+                <div className="grid-title col-start-3 text-center">Status</div>
+                <div className="grid-title col-start-4 text-center">
+                    Actions
+                </div>
+                {talentRequests.map((talentRequest) => (
+                    <TalentRequestItem
+                        talentRequestItem={talentRequest}
+                        key={talentRequest.talentRequestId}
+                    />
+                ))}
             </div>
         </section>
     );

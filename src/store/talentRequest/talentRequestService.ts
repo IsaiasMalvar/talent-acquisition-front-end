@@ -12,7 +12,7 @@ const createTalentRequest = async (talentRequest: TalentRequest) => {
 
 const getAllTalentRequests = async () => {
     const response = await axios.get(talent_request_service);
-
+    console.log(response.data);
     return response.data;
 };
 

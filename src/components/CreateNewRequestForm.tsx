@@ -61,7 +61,6 @@ const CreateNewRequestForm = (): React.ReactElement => {
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         dispatch(createTalentRequest(talentRequest));
-        console.log(talentRequest);
     };
 
     useEffect(() => {
