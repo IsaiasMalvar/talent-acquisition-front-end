@@ -1,6 +1,7 @@
-import { createBrowserRouter, Navigate, RouteObject } from "react-router"
-import App from "../../App"
-import HomePage from "../../pages/HomePage"
+import { createBrowserRouter, Navigate, RouteObject } from "react-router";
+import App from "../../App";
+import HomePage from "../../pages/HomePage";
+import CreateRequestPage from "../../pages/CreateRequestPage";
 
 const routes: RouteObject[] = [
     {
@@ -16,13 +17,13 @@ const routes: RouteObject[] = [
                 element: <HomePage />,
             },
             {
-                path: "/tes",
-                element: <div>heythere</div>,
+                path: "/create-new-request",
+                element: <CreateRequestPage />,
             },
         ],
     },
-]
+];
 
-const appRouter = createBrowserRouter(routes)
+const appRouter = createBrowserRouter(routes);
 
-export default appRouter
+export default appRouter;

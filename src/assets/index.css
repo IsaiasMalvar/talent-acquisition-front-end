@@ -4,7 +4,15 @@
 
 @layer components {
     .border-link {
-        @apply border-r-2 p-2 pointer-events-auto   relative after:absolute after:bottom-0 after:left-0 after:border-b-2 after:w-full hover:bg-orange-950/50 duration-700;
+        @apply border-r-2 p-2 border-amber-800 after:border-amber-800 pointer-events-auto   relative after:absolute after:bottom-0 after:left-0 after:border-b-2 after:w-full hover:bg-orange-950/50 duration-700;
+    }
+
+    .form-group {
+        @apply flex flex-col gap-y-5 p-2 font-poppins text-white;
+    }
+
+    .option {
+        @apply p-1 bg-amber-300/20;
     }
 }
 @layer utilities {
@@ -19,8 +27,7 @@
 
     .tinted-image {
         width: 100%;
-        height: -webkit-fill-available;
-        min-height: 100%;
+        height: 100%;
         background-image: url("/talent-re.webp");
         background-size: cover;
         background-position: center;
