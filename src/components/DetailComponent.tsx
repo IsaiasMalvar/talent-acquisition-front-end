@@ -1,66 +1,46 @@
-import React, { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../store/hooks";
-import { Link, useParams } from "react-router";
-import { toast } from "react-toastify";
-import { getTalentRequestById } from "../store/talentRequest/talentRequestSlice";
+import React from "react";
+import { Link, useLocation } from "react-router";
+
 import { cn, requestStatuses } from "../utils/utils";
+import { TalentRequestFulfillment } from "../store/types";
 
-const DetailComponent = (): React.ReactElement => {
-    const {
-        talentRequest: {
-            talentRequestTitle,
-            requestStatus,
-            startDate,
-            jobDescription,
-            candidateSkills,
-        },
-        isError,
-        message,
-        isLoading,
-    } = useAppSelector((state) => state.talentRequest);
+interface DetailComponentProps {
+    talentType: TalentRequestFulfillment;
+}
 
-    const dispatch = useAppDispatch();
+const DetailComponent = ({
+    talentType,
+}: DetailComponentProps): React.ReactElement => {
+    const dateToString = (date: string | Date) => {
+        if (date instanceof Date) {
+            const dateToString = new Date(date).toLocaleDateString("en-US", {
+                timeZone: "UTC",
+            });
+            return dateToString;
+        } else return date;
+    };
 
-    const { talentRequestId } = useParams();
-
-    useEffect(() => {
-        if (isError) {
-            toast.error(message);
-        }
-
-        dispatch(getTalentRequestById(talentRequestId!));
-    }, [dispatch, isError, message, talentRequestId]);
-
-    if (isLoading) {
-        return (
-            <div className="absolute top-0 left-0 w-screen h-screen bg-amber-700 flex flex-col justify-center items-center">
-                <div className="animate-bounce rounded-full h-[200px] w-[200px] bg-orange-900"></div>
-            </div>
-        );
-    }
-
-    if (isError) {
-        return <h3>Something Went Wrong</h3>;
-    }
+    const path = useLocation();
 
     return (
         <article className="flex flex-col justify-start p-3 bg-amber-700  text-white w-[80%] m-auto">
             <div className="p-2 flex flex-col justify-between border-b-2 border-slate-50 gap-y-3">
                 <div className="flex flex-col sm:flex-row justify-between gap-y-3">
                     <h1 className="font-poppins text-2xl font-bold">
-                        {talentRequestTitle}
+                        {talentType.talentRequestTitle}
                     </h1>
                     <span
                         className={cn(
-                            `p-2 text-center rounded w-[210px] font-mono font-bold ${requestStatus === requestStatuses.open ? "bg-amber-400/60" : requestStatus === requestStatuses.approved ? "bg-green-400/60" : "bg-purple-400/60"}`
+                            `p-2 text-center rounded w-[210px] font-mono font-bold ${talentType.requestStatus === requestStatuses.open ? "bg-amber-400/60" : talentType.requestStatus === requestStatuses.approved ? "bg-green-400/60" : "bg-purple-400/60"}`
                         )}
                     >
-                        {requestStatus}
+                        {talentType.requestStatus}
                     </span>
                 </div>
                 <div className="flex flex-col sm:flex-row justify-between gap-y-3">
                     <span className="text-base font-semibold break-words">
-                        Start Date: {startDate}
+                        Start Date:
+                        {dateToString(talentType.startDate as string | Date)}
                     </span>
                     <Link
                         to="/view-all-requests"
@@ -71,6 +51,27 @@ const DetailComponent = (): React.ReactElement => {
                 </div>
             </div>
             <div className="bg-amber-700 flex-col flex p-3 ">
+                {path.pathname.includes("/talent-fulfillment") && (
+                    <>
+                        {" "}
+                        <div className="flex flex-col p-2">
+                            <h2 className="text-xl font-poppins font-bold">
+                                Talent Request Id
+                            </h2>
+                            <p className="text-base font-poppins">
+                                {talentType.talentRequestId}
+                            </p>
+                        </div>
+                        <div className="flex flex-col p-2">
+                            <h2 className="text-xl font-poppins font-bold">
+                                Talent Fulfillment Id
+                            </h2>
+                            <p className="text-base font-poppins">
+                                {talentType.talentFulfillmentId}
+                            </p>
+                        </div>
+                    </>
+                )}
                 <div className="flex flex-col p-2">
                     <h2 className="text-xl font-poppins font-bold">
                         Job Description
@@ -79,7 +80,7 @@ const DetailComponent = (): React.ReactElement => {
                         Responsibilites
                     </h3>
                     <p className="text-base font-poppins">
-                        {jobDescription.responsibilities}
+                        {talentType.jobDescription!.responsibilities}
                     </p>
                 </div>
                 <div className="flex flex-col p-2">
@@ -87,7 +88,7 @@ const DetailComponent = (): React.ReactElement => {
                         Qualifications
                     </h3>
                     <p className="text-base font-poppins">
-                        {jobDescription.qualifications}
+                        {talentType.jobDescription!.qualifications}
                     </p>
                 </div>
             </div>
@@ -99,13 +100,17 @@ const DetailComponent = (): React.ReactElement => {
                     <h3 className="text-base font-poppins font-bold mt-2">
                         Core technical Skill
                     </h3>
-                    <p className="uppercase">{candidateSkills.coreSkill}</p>
+                    <p className="uppercase">
+                        {talentType.candidateSkills!.coreSkill}
+                    </p>
                 </div>
                 <div className="flex flex-col p-2">
                     <h3 className="text-base font-poppins font-bold">
                         Skill Level
                     </h3>
-                    <p className="uppercase">{candidateSkills.skillLevel}</p>
+                    <p className="uppercase">
+                        {talentType.candidateSkills?.skillLevel}
+                    </p>
                 </div>
             </div>
         </article>
