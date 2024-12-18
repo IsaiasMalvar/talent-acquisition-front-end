@@ -31,7 +31,13 @@ const RequestDetailPage = (): React.ReactElement => {
     }
 
     if (isError) {
-        return <h3>Something Went Wrong</h3>;
+        return (
+            <div className="absolute top-0 left-0 w-screen h-screen bg-amber-700 flex flex-col justify-center items-center">
+                <div className="animate-pulse text-9xl rounded-full  text-red-600">
+                    ERROR
+                </div>
+            </div>
+        );
     }
     return (
         <section className="flex justify-between h-[650px] items-center ">
