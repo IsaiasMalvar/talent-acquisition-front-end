@@ -1,20 +1,20 @@
 import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import {
-    getAllTalentRequests,
+    getAllTalentFulfillments,
     reset,
-} from "../store/talentRequest/talentRequestSlice";
+} from "../store/talentFulfillment/talentFulfillmentSlice";
 import TalentsList from "../components/TalentsList";
 
-const ViewAllRequestsPage = (): React.ReactElement => {
-    const { isSuccess, talentRequests } = useAppSelector(
-        (state) => state.talentRequest
+const TalentFulfillmentsPage = (): React.ReactElement => {
+    const { talentFulfillments, isSuccess } = useAppSelector(
+        (state) => state.talentFulfillment
     );
 
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(getAllTalentRequests());
+        dispatch(getAllTalentFulfillments());
     }, [dispatch]);
 
     useEffect(() => {
@@ -24,8 +24,7 @@ const ViewAllRequestsPage = (): React.ReactElement => {
             }
         };
     }, [dispatch, isSuccess]);
-
-    return <TalentsList talentList={talentRequests} />;
+    return <TalentsList talentList={talentFulfillments} />;
 };
 
-export default ViewAllRequestsPage;
+export default TalentFulfillmentsPage;

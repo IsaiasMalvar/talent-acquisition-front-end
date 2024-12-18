@@ -32,7 +32,7 @@ const TalentRequestItem = ({
                             Start Date
                         </div>
                         <div className="font-oswald text-xl p-2 text-center text-slate-100">
-                            {new Date(startDate).toLocaleDateString("en-US", {
+                            {new Date(startDate!).toLocaleDateString("en-US", {
                                 timeZone: "UTC",
                             })}
                         </div>
@@ -56,7 +56,7 @@ const TalentRequestItem = ({
                                 to={`/talent-request/${talentRequestId}`}
                                 className="text-slate-100 transition-all duration-300"
                             >
-                                View and Approve
+                                Details
                             </Link>
                         </div>
                     </div>
@@ -67,7 +67,7 @@ const TalentRequestItem = ({
                         {talentRequestTitle}
                     </div>
                     <div className="font-oswald text-xl col-start-2 p-2 text-center text-slate-100">
-                        {new Date(startDate).toLocaleDateString("en-US", {
+                        {new Date(startDate!).toLocaleDateString("en-US", {
                             timeZone: "UTC",
                         })}
                     </div>
@@ -80,7 +80,7 @@ const TalentRequestItem = ({
                     </div>
                     <div className="col-start-4 hover:bg-amber-900 transition-all duration-300 p-2 text-center font-oswald text-xl text-slate-100 border rounded-md">
                         <Link to={`/talent-request/${talentRequestId}`}>
-                            View and Approve
+                            Details
                         </Link>
                     </div>
                 </>

@@ -2,8 +2,14 @@ import type { Action, ThunkAction } from "@reduxjs/toolkit";
 import { combineSlices, configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { talentRequestSlice } from "./talentRequest/talentRequestSlice";
+import { talentFulfillmentSlice } from "./talentFulfillment/talentFulfillmentSlice";
+import { jobPostSlice } from "./careerPortal/careerPortalSlice";
 
-const rootReducer = combineSlices(talentRequestSlice);
+const rootReducer = combineSlices(
+    talentRequestSlice,
+    talentFulfillmentSlice,
+    jobPostSlice
+);
 
 export type RootState = ReturnType<typeof rootReducer>;
 

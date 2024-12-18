@@ -15,6 +15,8 @@ export interface TalentRequestFulfillment {
     roleLevel?: string;
     employmentType?: string;
     jobPostId?: string;
+    jobDescription?: JobDescription;
+    candidateSkills?: CandidateSkills;
 }
 
 export interface CandidateSkills {
