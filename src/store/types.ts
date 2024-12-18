@@ -4,17 +4,20 @@ export interface TalentRequest {
     candidateSkills: CandidateSkills;
     requestStatus: string;
     startDate: string;
+    talentFulfillmentId?: string;
 }
 
 export interface TalentRequestFulfillment {
     talentRequestTitle?: string;
     requestStatus?: string;
-    startDate?: Date;
+    startDate?: Date | string;
     talentRequestId?: string;
     talentFulfillmentId?: string;
     roleLevel?: string;
     employmentType?: string;
     jobPostId?: string;
+    jobDescription?: JobDescription;
+    candidateSkills?: CandidateSkills;
 }
 
 export interface CandidateSkills {

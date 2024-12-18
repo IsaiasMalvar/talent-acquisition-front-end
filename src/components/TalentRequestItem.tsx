@@ -1,6 +1,6 @@
 import React from "react";
 import { TalentRequestFulfillment } from "../store/types";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { cn, requestStatuses } from "../utils/utils";
 
 interface TalentRequestItemProps {
@@ -14,9 +14,12 @@ const TalentRequestItem = ({
         talentRequestTitle,
         requestStatus,
         talentRequestId,
+        talentFulfillmentId,
     },
     isSmall,
 }: TalentRequestItemProps): React.ReactElement => {
+    const path = useLocation();
+
     return (
         <>
             {isSmall ? (
@@ -32,7 +35,7 @@ const TalentRequestItem = ({
                             Start Date
                         </div>
                         <div className="font-oswald text-xl p-2 text-center text-slate-100">
-                            {new Date(startDate).toLocaleDateString("en-US", {
+                            {new Date(startDate!).toLocaleDateString("en-US", {
                                 timeZone: "UTC",
                             })}
                         </div>
@@ -52,12 +55,21 @@ const TalentRequestItem = ({
                             {requestStatus}
                         </div>
                         <div className="mt-5 hover:bg-amber-900 hover:border-amber-900 transition-all duration-300 p-2 text-center font-oswald text-xl text-slate-100 border rounded-md">
-                            <Link
-                                to={`/talent-request/${talentRequestId}`}
-                                className="text-slate-100 transition-all duration-300"
-                            >
-                                View and Approve
-                            </Link>
+                            {path.pathname.includes("/talent-fulfillment") ? (
+                                <Link
+                                    to={`/talent-fulfillment/${talentFulfillmentId}`}
+                                    className="text-slate-100 transition-all duration-300"
+                                >
+                                    Approve
+                                </Link>
+                            ) : (
+                                <Link
+                                    to={`/talent-request/${talentRequestId}`}
+                                    className="text-slate-100 transition-all duration-300"
+                                >
+                                    Details
+                                </Link>
+                            )}
                         </div>
                     </div>
                 </>
@@ -67,7 +79,7 @@ const TalentRequestItem = ({
                         {talentRequestTitle}
                     </div>
                     <div className="font-oswald text-xl col-start-2 p-2 text-center text-slate-100">
-                        {new Date(startDate).toLocaleDateString("en-US", {
+                        {new Date(startDate!).toLocaleDateString("en-US", {
                             timeZone: "UTC",
                         })}
                     </div>
@@ -79,9 +91,17 @@ const TalentRequestItem = ({
                         {requestStatus}
                     </div>
                     <div className="col-start-4 hover:bg-amber-900 transition-all duration-300 p-2 text-center font-oswald text-xl text-slate-100 border rounded-md">
-                        <Link to={`/talent-request/${talentRequestId}`}>
-                            View and Approve
-                        </Link>
+                        {path.pathname.includes("/talent-fulfillment") ? (
+                            <Link
+                                to={`/talent-fulfillment/${talentFulfillmentId}`}
+                            >
+                                Approve
+                            </Link>
+                        ) : (
+                            <Link to={`/talent-request/${talentRequestId}`}>
+                                Details
+                            </Link>
+                        )}
                     </div>
                 </>
             )}
