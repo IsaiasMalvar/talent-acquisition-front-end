@@ -5,6 +5,7 @@ import CreateRequestPage from "../../pages/CreateRequestPage";
 import ViewAllRequestsPage from "../../pages/ViewAllRequestsPage";
 import RequestDetailPage from "../../pages/RequestDetailPage";
 import TalentFulfillmentsPage from "../../pages/TalentFulfillmentsPage";
+import TalentFulfillmentDetailPage from "../../pages/TalentFulfillmentDetailPage";
 
 const routes: RouteObject[] = [
     {
@@ -34,6 +35,10 @@ const routes: RouteObject[] = [
             {
                 path: "/talent-fulfillments",
                 element: <TalentFulfillmentsPage />,
+            },
+            {
+                path: "/talent-fulfillments/:talentFulfillmentId",
+                element: <TalentFulfillmentDetailPage />,
             },
         ],
     },

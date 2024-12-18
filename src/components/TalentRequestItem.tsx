@@ -55,9 +55,9 @@ const TalentRequestItem = ({
                             {requestStatus}
                         </div>
                         <div className="mt-5 hover:bg-amber-900 hover:border-amber-900 transition-all duration-300 p-2 text-center font-oswald text-xl text-slate-100 border rounded-md">
-                            {path.pathname.includes("/talent-fulfillment") ? (
+                            {path.pathname.includes("/talent-fulfillments") ? (
                                 <Link
-                                    to={`/talent-fulfillment/${talentFulfillmentId}`}
+                                    to={`/talent-fulfillments/${talentFulfillmentId}`}
                                     className="text-slate-100 transition-all duration-300"
                                 >
                                     Approve
@@ -91,9 +91,9 @@ const TalentRequestItem = ({
                         {requestStatus}
                     </div>
                     <div className="col-start-4 hover:bg-amber-900 transition-all duration-300 p-2 text-center font-oswald text-xl text-slate-100 border rounded-md">
-                        {path.pathname.includes("/talent-fulfillment") ? (
+                        {path.pathname.includes("/talent-fulfillments") ? (
                             <Link
-                                to={`/talent-fulfillment/${talentFulfillmentId}`}
+                                to={`/talent-fulfillments/${talentFulfillmentId}`}
                             >
                                 Approve
                             </Link>

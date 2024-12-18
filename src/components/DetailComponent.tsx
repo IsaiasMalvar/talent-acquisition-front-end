@@ -80,7 +80,7 @@ const DetailComponent = ({
                         Responsibilites
                     </h3>
                     <p className="text-base font-poppins">
-                        {talentType.jobDescription!.responsibilities}
+                        {talentType.jobDescription?.responsibilities}
                     </p>
                 </div>
                 <div className="flex flex-col p-2">
@@ -88,7 +88,7 @@ const DetailComponent = ({
                         Qualifications
                     </h3>
                     <p className="text-base font-poppins">
-                        {talentType.jobDescription!.qualifications}
+                        {talentType.jobDescription?.qualifications}
                     </p>
                 </div>
             </div>
@@ -101,7 +101,7 @@ const DetailComponent = ({
                         Core technical Skill
                     </h3>
                     <p className="uppercase">
-                        {talentType.candidateSkills!.coreSkill}
+                        {talentType.candidateSkills?.coreSkill}
                     </p>
                 </div>
                 <div className="flex flex-col p-2">
