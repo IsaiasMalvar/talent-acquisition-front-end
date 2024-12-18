@@ -16,6 +16,7 @@ const initialState: TalentRequestSliceState = {
         },
         startDate: "",
         talentRequestTitle: "",
+        requestStatus: "",
     },
     isError: false,
     isSuccess: false,

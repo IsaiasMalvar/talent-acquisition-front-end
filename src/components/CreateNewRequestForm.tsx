@@ -21,6 +21,7 @@ const CreateNewRequestForm = (): React.ReactElement => {
         jobDescription: { responsibilities: "", qualifications: "" },
         candidateSkills: { coreSkill: "", skillLevel: "" },
         startDate: "",
+        requestStatus: "",
     });
 
     const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>
@@ -70,7 +71,7 @@ const CreateNewRequestForm = (): React.ReactElement => {
 
         if (isSuccess) {
             dispatch(reset());
-            navigate("/get-all-talent-requests");
+            navigate("/view-all-requests");
         }
 
         dispatch(reset());

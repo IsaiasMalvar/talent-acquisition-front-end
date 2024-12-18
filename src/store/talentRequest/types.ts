@@ -2,6 +2,7 @@ export interface TalentRequest {
     talentRequestTitle: string;
     jobDescription: JobDescription;
     candidateSkills: CandidateSkills;
+    requestStatus: string;
     startDate: string;
 }
 
