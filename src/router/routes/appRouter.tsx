@@ -40,6 +40,10 @@ const routes: RouteObject[] = [
                 path: "/talent-fulfillments/:talentFulfillmentId",
                 element: <TalentFulfillmentDetailPage />,
             },
+            {
+                path: "/career-portal",
+                element: <TalentFulfillmentDetailPage />,
+            },
         ],
     },
 ];

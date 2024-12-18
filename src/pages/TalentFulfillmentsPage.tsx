@@ -24,7 +24,16 @@ const TalentFulfillmentsPage = (): React.ReactElement => {
             }
         };
     }, [dispatch, isSuccess]);
-    return <TalentsList talentList={talentFulfillments} />;
+    return (
+        <TalentsList
+            sectionTitle="AVAILABLE REQUESTS"
+            column1="Title"
+            column2="Start Date"
+            colum3="Status"
+            column4="Actions"
+            talentList={talentFulfillments}
+        />
+    );
 };
 
 export default TalentFulfillmentsPage;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router";
 
-import { cn, requestStatuses } from "../utils/utils";
+import { cn, dateToString, requestStatuses } from "../utils/utils";
 import { TalentRequestFulfillment } from "../store/types";
 
 interface DetailComponentProps {
@@ -11,15 +11,6 @@ interface DetailComponentProps {
 const DetailComponent = ({
     talentType,
 }: DetailComponentProps): React.ReactElement => {
-    const dateToString = (date: string | Date) => {
-        if (date instanceof Date) {
-            const dateToString = new Date(date).toLocaleDateString("en-US", {
-                timeZone: "UTC",
-            });
-            return dateToString;
-        } else return date;
-    };
-
     const path = useLocation();
 
     return (
