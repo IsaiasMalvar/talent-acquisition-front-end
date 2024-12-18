@@ -1,5 +1,5 @@
 import axios from "axios";
-import { TalentRequest } from "./types";
+import { TalentRequest } from "../types";
 
 const talent_request_service =
     "http://localhost:8080/talent-request-service/talent-request";
