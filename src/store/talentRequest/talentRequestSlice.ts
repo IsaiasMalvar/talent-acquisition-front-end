@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import talentRequestService from "./talentRequestService";
-import { TalentRequest, TalentRequestSliceState } from "./types";
+import { TalentRequest, TalentRequestSliceState } from "../types";
 
 const initialState: TalentRequestSliceState = {
     talentRequests: [],

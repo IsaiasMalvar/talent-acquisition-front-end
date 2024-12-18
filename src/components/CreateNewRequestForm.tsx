@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { TalentRequest } from "../store/talentRequest/types";
+import { TalentRequest } from "../store/types";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import {
     createTalentRequest,

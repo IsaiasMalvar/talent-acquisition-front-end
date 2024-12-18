@@ -1,5 +1,5 @@
 import React from "react";
-import { TalentRequestFulfillment } from "../store/talentRequest/types";
+import { TalentRequestFulfillment } from "../store/types";
 import { Link } from "react-router";
 import { cn, requestStatuses } from "../utils/utils";
 
