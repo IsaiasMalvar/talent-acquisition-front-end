@@ -51,7 +51,7 @@ const HeroContent = ({ color }: HeroContentInterface): React.ReactElement => {
 
             <Link
                 className="m-auto text-center mobile:p-1  mb-0 mt-4 mobile:text-base sm:text-xl text-2xl p-3 hover:bg-amber-700 transition-all duration-150 font-mono w-[70%] border-b border-orange-800"
-                to="/view-all-requests"
+                to="/talent-requests"
             >
                 View All Request
             </Link>

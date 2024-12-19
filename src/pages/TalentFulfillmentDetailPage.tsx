@@ -75,13 +75,11 @@ const TalentFulfillmentDetailPage = (): React.ReactElement => {
         }
     };
 
-    console.log(talentFulfillmentState, "im");
-
     const onApproveJobPost = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         dispatch(approveTalentFulfillmentJobPost(talentFulfillmentState));
         dispatch(reset());
-        navigate("/talent-fulfillments");
+        console.log(talentFulfillmentState, "im");
     };
 
     if (isLoading) {
@@ -177,7 +175,7 @@ const TalentFulfillmentDetailPage = (): React.ReactElement => {
                                     </select>
                                 </div>
                                 <div className="form-group p-0 ">
-                                    <div className="mb-3 flex flex-col gap-y-2">
+                                    <div className="mb-3 flex flex-col gap-y-2 items-start">
                                         <label htmlFor="">Approval</label>
                                         <input
                                             type="checkbox"

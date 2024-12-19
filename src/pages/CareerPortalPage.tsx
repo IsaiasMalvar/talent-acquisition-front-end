@@ -24,7 +24,7 @@ const CareerPortalPage = (): React.ReactElement => {
             <TalentsList
                 sectionTitle="JOB POSTS"
                 column1="Job Title"
-                column2="Core Skill"
+                column2="Skill Level"
                 colum3="Employment Type"
                 column4="Actions"
                 talentList={jobPosts}

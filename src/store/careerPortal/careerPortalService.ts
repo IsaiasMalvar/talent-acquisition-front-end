@@ -11,7 +11,7 @@ const getAllJobPosts = async () => {
 
 const getJobPostById = async (jobPostId: string) => {
     const response = await axios.get(career_portal_service + "/" + jobPostId);
-
+    console.log(response.data);
     return response.data;
 };
 

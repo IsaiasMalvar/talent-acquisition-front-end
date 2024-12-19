@@ -45,9 +45,9 @@ const TalentRequestItem = ({
                         </div>
                         <div className="font-oswald text-xl p-2 text-center text-slate-100">
                             {path.pathname.includes("/career-portal") ? (
-                                <>{dateToString(startDate!)}</>
+                                <>{candidateSkills?.skillLevel}</>
                             ) : (
-                                <>{candidateSkills?.coreSkill}</>
+                                <>{dateToString(startDate!)}</>
                             )}
                         </div>
                         <div className="grid-title text-orange-950">
@@ -106,12 +106,16 @@ const TalentRequestItem = ({
                     </div>
                     <div className="font-oswald text-xl col-start-2 p-2 text-center text-slate-100">
                         {path.pathname.includes("/career-portal") ? (
-                            <>{dateToString(startDate!)}</>
+                            <>{candidateSkills?.skillLevel}</>
                         ) : (
-                            <>{candidateSkills?.coreSkill}</>
+                            <>{dateToString(startDate!)}</>
                         )}
                     </div>
                     {path.pathname.includes("/career-portal") ? (
+                        <span className="font-oswald text-xl text-slate-100 p-2 text-center">
+                            {employmentType}
+                        </span>
+                    ) : (
                         <div
                             className={cn(
                                 `font-oswald text-xl text-slate-100 col-start-3 p-2 text-center ${requestStatus === requestStatuses.open ? "bg-amber-400/60" : requestStatus === requestStatuses.approved ? "bg-green-400/60" : "bg-purple-400/60"}`
@@ -119,10 +123,6 @@ const TalentRequestItem = ({
                         >
                             {requestStatus}
                         </div>
-                    ) : (
-                        <span className="font-oswald text-xl text-slate-100 p-2 text-center">
-                            {employmentType}
-                        </span>
                     )}
                     <div className="col-start-4 hover:bg-amber-900 transition-all duration-300 p-2 text-center font-oswald text-xl text-slate-100 border rounded-md">
                         {path.pathname.includes("/talent-fulfillments") ? (

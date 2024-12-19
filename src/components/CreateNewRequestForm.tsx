@@ -71,7 +71,7 @@ const CreateNewRequestForm = (): React.ReactElement => {
 
         if (isSuccess) {
             dispatch(reset());
-            navigate("/view-all-requests");
+            navigate("/talent-requests");
         }
 
         dispatch(reset());
