@@ -18,7 +18,7 @@ const Header = ({ className }: HeaderProps): React.ReactElement => {
                 Home
             </Link>
 
-            <Link to="/talent-fulfillment-portal" className="border-link">
+            <Link to="/talent-fulfillments" className="border-link">
                 Talent Fulfillment Portal
             </Link>
 

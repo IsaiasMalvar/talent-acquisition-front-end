@@ -6,6 +6,8 @@ import ViewAllRequestsPage from "../../pages/ViewAllRequestsPage";
 import RequestDetailPage from "../../pages/RequestDetailPage";
 import TalentFulfillmentsPage from "../../pages/TalentFulfillmentsPage";
 import TalentFulfillmentDetailPage from "../../pages/TalentFulfillmentDetailPage";
+import CareerPortalPage from "../../pages/CareerPortalPage";
+import JobPostDetailPage from "../../pages/JobPostDetailPage";
 
 const routes: RouteObject[] = [
     {
@@ -25,11 +27,11 @@ const routes: RouteObject[] = [
                 element: <CreateRequestPage />,
             },
             {
-                path: "/view-all-requests",
+                path: "/talent-requests",
                 element: <ViewAllRequestsPage />,
             },
             {
-                path: "/talent-request/:talentRequestId",
+                path: "/talent-requests/:talentRequestId",
                 element: <RequestDetailPage />,
             },
             {
@@ -39,6 +41,14 @@ const routes: RouteObject[] = [
             {
                 path: "/talent-fulfillments/:talentFulfillmentId",
                 element: <TalentFulfillmentDetailPage />,
+            },
+            {
+                path: "/career-portal",
+                element: <CareerPortalPage />,
+            },
+            {
+                path: "/career-portal/:jobPostId",
+                element: <JobPostDetailPage />,
             },
         ],
     },

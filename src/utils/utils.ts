@@ -27,3 +27,12 @@ export const requestStatuses = {
     assigned: "ASSIGNED_TO_TA",
     approved: "APPROVED",
 };
+
+export const dateToString = (date: string | Date) => {
+    if (date instanceof Date) {
+        const dateToString = new Date(date).toLocaleDateString("en-US", {
+            timeZone: "UTC",
+        });
+        return dateToString;
+    } else return date;
+};

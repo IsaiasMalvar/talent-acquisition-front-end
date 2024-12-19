@@ -25,7 +25,16 @@ const ViewAllRequestsPage = (): React.ReactElement => {
         };
     }, [dispatch, isSuccess]);
 
-    return <TalentsList talentList={talentRequests} />;
+    return (
+        <TalentsList
+            sectionTitle="AVAILABLE REQUESTS"
+            column1="Title"
+            column2="Start Date"
+            colum3="Status"
+            column4="Actions"
+            talentList={talentRequests}
+        />
+    );
 };
 
 export default ViewAllRequestsPage;
